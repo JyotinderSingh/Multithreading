@@ -12,5 +12,5 @@
 - [Handling interrupts, when your methods already throw/handle external interrupts](./src/com/jyotindersingh/ThreadCoordination.java)
 - [Handling external interrupts, by checking for them on a periodic basis - ideal for methods that might not already handle them](./src/com/jyotindersingh/ThreadCoordinationIsInterrupted.java)
 - [Daemon threads - To allow your application to exit without being blocked due to some thread running in the background](./src/com/jyotindersingh/ThreadCoordinationDaemon.java)
-
+- [Joins - How to guarantee that a thread upon which we depend, completes its work by the time we expect it.](./src/com/jyotindersingh/ThreadCoordinationJoins.java)
  
