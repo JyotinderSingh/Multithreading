@@ -33,7 +33,7 @@ public class ThreadCoordination_2 {
                 if (Thread.currentThread().isInterrupted()) {
                     // Note: We do not use the Try/Catch method of handling interrupts here,
                     // as we are not throwing an InterruptedException anywhere while
-                    // computing the result, hence we will never enter the catch black
+                    // computing the result, hence we will never enter the catch block
                     // (sleep method in itself implements that exception hence can
                     // be wrapped with the try catch block to handle the external interrupts)
                     System.out.println("Prematurely interrupted computation");

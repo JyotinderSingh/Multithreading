@@ -16,7 +16,7 @@ public class ThreadCoordination_3_Daemon {
         // main thread ended, makes the entire app terminate.
         thread.setDaemon(true);
         thread.start();
-        thread.sleep(100);
+        Thread.sleep(100);
         thread.interrupt();
 
     }
