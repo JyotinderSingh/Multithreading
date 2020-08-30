@@ -1,6 +1,6 @@
 package com.jyotindersingh;
 
-public class Main_3 {
+public class Basics3 {
     public static void main(String[] args) {
         Thread thread = new NewThread();
 

@@ -1,6 +1,6 @@
 package com.jyotindersingh;
 
-public class Main_2 {
+public class Basics2 {
     public static void main(String[] args) {
         Thread thread = new Thread(new Runnable() {
             @Override

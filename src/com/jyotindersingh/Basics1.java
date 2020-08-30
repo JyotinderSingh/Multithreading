@@ -1,6 +1,6 @@
 package com.jyotindersingh;
 
-public class Main {
+public class Basics1 {
 
     public static void main(String[] args) throws InterruptedException {
         // We create an object of the Thread class

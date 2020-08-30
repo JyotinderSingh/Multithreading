@@ -2,7 +2,7 @@ package com.jyotindersingh;
 
 import java.math.BigInteger;
 
-public class ThreadCoordination_2 {
+public class ThreadCoordinationIsInterrupted {
     public static void main(String[] args) {
 
         Thread thread = new Thread(new LongComputationTask(new BigInteger("20000"), new BigInteger("1000000000")));
