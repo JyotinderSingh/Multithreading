@@ -12,9 +12,9 @@ I made this repository to act as a personal reference guide to building scalable
 
 ## Thread Coordination (Termination, Interrupts, Daemon Threads, Joins)
 - [Handling interrupts, when your methods already throw/handle external interrupts](./src/com/jyotindersingh/ThreadCoordination.java)
-- [Handling external interrupts, by checking for them on a periodic basis - ideal for methods that might not already handle them](./src/com/jyotindersingh/ThreadCoordinationIsInterrupted.java)
-- [Daemon threads - To allow your application to exit without being blocked due to some thread running in the background](./src/com/jyotindersingh/ThreadCoordinationDaemon.java)
-- [Joins - How to guarantee that a thread upon which we depend, completes its work by the time we expect it.](./src/com/jyotindersingh/ThreadCoordinationJoins.java)
+- [Handling external interrupts, by checking for them on a periodic basis](./src/com/jyotindersingh/ThreadCoordinationIsInterrupted.java) - ideal for methods that might not already handle them.
+- [Daemon threads](./src/com/jyotindersingh/ThreadCoordinationDaemon.java) - To allow your application to exit without being blocked due to some thread running in the background.
+- [Joins](./src/com/jyotindersingh/ThreadCoordinationJoins.java) - How to guarantee that a thread upon which we depend, completes its work by the time we expect it.
  
  ## Performance Optimization
  ### Performance measures in Multithreading:
@@ -23,3 +23,4 @@ I made this repository to act as a personal reference guide to building scalable
  
  **Optimizing for Latency**
  - [Image Processing](./src/com/jyotindersingh/ImageProcessing.java) - We run an image recolouring algorithm over an image in both a sequential and a multithreaded scenario and demostrate the performace gains achieved with the help of more threads.
+ 
