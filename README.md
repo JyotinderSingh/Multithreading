@@ -24,3 +24,8 @@ I made this repository to act as a personal reference guide to building scalable
  **Optimizing for Latency**
  - [Image Processing](./src/com/jyotindersingh/ImageProcessing.java) - We run an image recolouring algorithm over an image in both a sequential and a multithreaded scenario and demostrate the performace gains achieved with the help of more threads.
  
+ **Optimizing for Throughput**
+ 
+ Thread Pooling: Creating the threads once and reusing them for future tasks, instead of recreating the threads each and every time from scratch.
+ - [HTTP Server](./src/com/jyotindersingh/ThroughputHttpServer.java) - We run a CPU heavy task on a thread pool inside a server and look at the throughput gains as we increase the number of worker threads in the thread pool.
+ 
