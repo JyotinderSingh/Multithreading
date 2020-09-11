@@ -29,3 +29,11 @@ I made this repository to act as a personal reference guide to building scalable
  Thread Pooling: Creating the threads once and reusing them for future tasks, instead of recreating the threads each and every time from scratch.
  - [HTTP Server](./src/com/jyotindersingh/ThroughputHttpServer.java) - We run a CPU heavy task on a thread pool inside a server and look at the throughput gains as we increase the number of worker threads in the thread pool.
  
+ 
+ ## Data Sharing between Threads (Resource Sharing and Critical Sections)
+ **Monitors:** You can use the *synchronized* API. It provides a locking mechanism designed to prevent access to a block of code or an entire method by multiple threads.
+ There are 2 ways to use the synchronized keyword:
+ 1. [You can declare one or more methods in a class using the *synchronized* keyword](./src/com/jyotindersingh/RaceCondition.java). When one or more threads try and call these methods on the same object of this class, **only one thread will be able to execute either of these methods**.
+ 1. [Define the block of code that we consider as Critical Section and use the *synchronized* keyword](./src/com/jyotindersingh/RaceCondition2.java) to restrict access only to that section without making the entire methods synchronized. This provides us with a lot more flexibility ,to have separate critical sections synchronize on different objects.
+ 
+ Note: The *synchronized* block is **reentrant** - which means for instance if a Thread A is accessing a synchronized method, while already being in a different synchronized method or block, it will be able to access that synchronized method with no problem. Basically, a thread cannot prevent itself from entering a critical section.
