@@ -6,17 +6,17 @@
 I made this repository to act as a personal reference guide to building scalable and high performance multithreaded applications, and I hope this proves useful to others as well.
 
 ## Basics (Creating Threads)
-- [Using the Thread class and an anonymous instance of Runnable.](./src/com/jyotindersingh/Basics1.java)
-- [Setting UncaughtExceptionHandlers on your threads](./src/com/jyotindersingh/Basics2.java)
-- [Defining your own class that extends Thread.](./src/com/jyotindersingh/Basics3.java)
-- Case Study: [Bank Robbery](./src/com/jyotindersingh/BankRobbery.java)
+- [**Using the Thread class and an anonymous instance of Runnable.**](./src/com/jyotindersingh/Basics1.java)
+- [**Setting UncaughtExceptionHandlers on your threads**](./src/com/jyotindersingh/Basics2.java)
+- [**Defining your own class that extends Thread.**](./src/com/jyotindersingh/Basics3.java)
+- Case Study: [**Bank Robbery**](./src/com/jyotindersingh/BankRobbery.java)
     - Two threads try to brute force through a password to a vault, while another thread simultaneously tries to catch them.
 
 ## Thread Coordination (Termination, Interrupts, Daemon Threads, Joins)
-- [Handling interrupts, when your methods already throw/handle external interrupts](./src/com/jyotindersingh/ThreadCoordination.java)
-- [Handling external interrupts, by checking for them on a periodic basis](./src/com/jyotindersingh/ThreadCoordinationIsInterrupted.java) - ideal for methods that might not already handle them.
-- [Daemon threads](./src/com/jyotindersingh/ThreadCoordinationDaemon.java) - To allow your application to exit without being blocked due to some thread running in the background.
-- [Joins](./src/com/jyotindersingh/ThreadCoordinationJoins.java) - How to guarantee that a thread upon which we depend, completes its work by the time we expect it.
+- [**Handling interrupts, when your methods already throw/handle external interrupts**](./src/com/jyotindersingh/ThreadCoordination.java)
+- [**Handling external interrupts, by checking for them on a periodic basis**](./src/com/jyotindersingh/ThreadCoordinationIsInterrupted.java) - ideal for methods that might not already handle them.
+- [**Daemon threads**](./src/com/jyotindersingh/ThreadCoordinationDaemon.java) - To allow your application to exit without being blocked due to some thread running in the background.
+- [**Joins**](./src/com/jyotindersingh/ThreadCoordinationJoins.java) - How to guarantee that a thread upon which we depend, completes its work by the time we expect it.
  
  ## Performance Optimization
  ### Performance measures in Multithreading:
@@ -24,19 +24,19 @@ I made this repository to act as a personal reference guide to building scalable
  - Throughput - The amount of tasks completed in a given period. Measured in *tasks/time unit* 
  
  **Optimizing for Latency**
- - [Image Processing](./src/com/jyotindersingh/ImageProcessing.java) - We run an image recolouring algorithm over an image in both a sequential and a multithreaded scenario and demostrate the performace gains achieved with the help of more threads.
+ - [**Image Processing**](./src/com/jyotindersingh/ImageProcessing.java) - We run an image recolouring algorithm over an image in both a sequential and a multithreaded scenario and demostrate the performace gains achieved with the help of more threads.
  
  **Optimizing for Throughput**
  
  Thread Pooling: Creating the threads once and reusing them for future tasks, instead of recreating the threads each and every time from scratch.
- - [HTTP Server](./src/com/jyotindersingh/ThroughputHttpServer.java) - We run a CPU heavy task on a thread pool inside a server and look at the throughput gains as we increase the number of worker threads in the thread pool.
+ - [**HTTP Server**](./src/com/jyotindersingh/ThroughputHttpServer.java) - We run a CPU heavy task on a thread pool inside a server and look at the throughput gains as we increase the number of worker threads in the thread pool.
  
  
  ## Data Sharing between Threads (Resource Sharing and Critical Sections)
  **Monitors:** You can use the *synchronized* API. It provides a locking mechanism designed to prevent access to a block of code or an entire method by multiple threads.
  There are 2 ways to use the synchronized keyword:
- 1. [You can declare one or more methods in a class using the *synchronized* keyword](./src/com/jyotindersingh/RaceCondition.java). When one or more threads try and call these methods on the same object of this class, **only one thread will be able to execute either of these methods**.
- 1. [Define the block of code that we consider as Critical Section and use the *synchronized* keyword](./src/com/jyotindersingh/RaceCondition2.java) to restrict access only to that section without making the entire methods synchronized. This provides us with a lot more flexibility ,to have separate critical sections synchronize on different objects.
+ 1. [**You can declare one or more methods in a class using the *synchronized* keyword**](./src/com/jyotindersingh/RaceCondition.java). When one or more threads try and call these methods on the same object of this class, **only one thread will be able to execute either of these methods**.
+ 1. [**Define the block of code that we consider as Critical Section and use the *synchronized* keyword**](./src/com/jyotindersingh/RaceCondition2.java) to restrict access only to that section without making the entire methods synchronized. This provides us with a lot more flexibility ,to have separate critical sections synchronize on different objects.
  
  Note: The *synchronized* block is **reentrant** - which means for instance if a Thread A is accessing a synchronized method, while already being in a different synchronized method or block, it will be able to access that synchronized method with no problem. Basically, a thread cannot prevent itself from entering a critical section.
  
