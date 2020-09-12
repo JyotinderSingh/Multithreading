@@ -63,9 +63,7 @@ public class RaceCondition2 {
         }
 
         public int getItems() {
-            synchronized (lock) {
                 return items;
-            }
         }
     }
 }

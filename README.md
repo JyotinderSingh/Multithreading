@@ -1,6 +1,8 @@
 # Multithreading and Concurrency
 #### This repository contains examples to help you get started with multithreading in Java - though the concepts should be applicable across any modern programming language.
 
+*[This repository is still under development]*
+
 I made this repository to act as a personal reference guide to building scalable and high performance multithreaded applications, and I hope this proves useful to others as well.
 
 ## Basics (Creating Threads)
@@ -37,3 +39,18 @@ I made this repository to act as a personal reference guide to building scalable
  1. [Define the block of code that we consider as Critical Section and use the *synchronized* keyword](./src/com/jyotindersingh/RaceCondition2.java) to restrict access only to that section without making the entire methods synchronized. This provides us with a lot more flexibility ,to have separate critical sections synchronize on different objects.
  
  Note: The *synchronized* block is **reentrant** - which means for instance if a Thread A is accessing a synchronized method, while already being in a different synchronized method or block, it will be able to access that synchronized method with no problem. Basically, a thread cannot prevent itself from entering a critical section.
+ 
+ **Atomic Operations:** Sadly most operations we perform are often not atomic.
+ - All reference assignments are atomic (so we can change the object reference in a single operation safely - hence, all our *getters* and *setters* are **atomic**).
+ - All assignments to primitive types are atomic and safe, *except long and double*.
+ - That means we can read from, and write to the following types atomically:
+    - int
+    - short
+    - byte
+    - float
+    - char
+    - boolean
+ - **long** and **double** are exceptions, as they are 64 bit long - for them Java doesn't provide any guarantees (even on 64 bit machines). It's entirely possible that a write to a long or a double takes two internal operations by the CPU - one write to the *lower 32 bits*, and one to the *upper 32 bits*.
+ - Fortunately, we are provided with the **volatile** keyword, which we can use when declaring long or double variables - and reads/writes to those variables are atomic, thread-safe - in other words, they are guaranteed to be performed with a single hardware operation. ```volatile double x = 1.0;```
+ 
+[**Metrics Aggregation:**](./src/com/jyotindersingh/MetricAggregation.java) Frequently, when running production applications we need to make sure how long certain important operations or pieces of code take. The length of those operations can depend on client's input data, environment, etc. It is important for us to identify the duration of those operations and performance issues and optimize the customer's experience.

@@ -56,7 +56,7 @@ public class RaceCondition {
             items--;
         }
 
-        public synchronized int getItems() {
+        public int getItems() {
             return items;
         }
     }
