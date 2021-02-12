@@ -54,3 +54,19 @@ I made this repository to act as a personal reference guide to building scalable
  - Fortunately, we are provided with the **volatile** keyword, which we can use when declaring long or double variables - and reads/writes to those variables are atomic, thread-safe - in other words, they are guaranteed to be performed with a single hardware operation. ```volatile double x = 1.0;```
  
 [**Metrics Aggregation:**](./src/com/jyotindersingh/MetricAggregation.java) Frequently, when running production applications we need to make sure how long certain important operations or pieces of code take. The length of those operations can depend on client's input data, environment, etc. It is important for us to identify the duration of those operations and performance issues and optimize the customer's experience.
+
+**Race Conditions:** A race condition occurs when -
+- Multiple threads are accessing a shared resource
+- At least one thread is modifying the shared resource
+- The timing of the threads' scheduling might cause incorrect results
+- *The core of the problem is **non-atomic operations performed on a shared resource**.
+
+**Data Race:** Problem - 
+- Compiler and CPU may execute instructions Out of Order to optimize performance and hardware utilization.
+- The will do so while maintaining the logical correctness of the code.
+- Out of Order execution by the compiler and the CPU are important features to speed up the code.
+- The **compiler** re-arranges instructions for better:
+    - Branch Prediction (optimized loops, "if" conditions, etc.)
+    - Vectorization - parallel instruction execution (SIMD)
+    - Prefetching intructions - better cache performance
+Rhe **CPU** re-arranges instructions for better hardware units utilization.
