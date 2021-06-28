@@ -72,5 +72,6 @@ I made this repository to act as a personal reference guide to building scalable
 - The **CPU** re-arranges instructions for better hardware units utilization.
       
 **[DeadLocks](./src/com/jyotindersingh/DeadLock.java)**
+
 **[DeadLock Prevention](./src/com/jyotindersingh/DeadLockPrevention.java)**
 
