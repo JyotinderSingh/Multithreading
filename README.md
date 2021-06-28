@@ -69,4 +69,8 @@ I made this repository to act as a personal reference guide to building scalable
     - Branch Prediction (optimized loops, "if" conditions, etc.)
     - Vectorization - parallel instruction execution (SIMD)
     - Prefetching intructions - better cache performance
-Rhe **CPU** re-arranges instructions for better hardware units utilization.
+- The **CPU** re-arranges instructions for better hardware units utilization.
+      
+**[DeadLocks](./src/com/jyotindersingh/DeadLock.java)**
+**[DeadLock Prevention](./src/com/jyotindersingh/DeadLockPrevention.java)**
+
