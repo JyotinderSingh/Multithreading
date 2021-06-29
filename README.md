@@ -123,6 +123,14 @@ operations and performance issues and optimize the customer's experience.
 - [User Interface Application](./src/com/jyotindersingh/ReenterantLock.java): Has two threads that access the same
   resource. The UI thread reads from the shared resource, while the worker thread writes to the shared resource.
 
-- [**Read and Write Locks:**](./src/com/jyotindersingh/ReenterantReadWriteLocks.java) Having specialized read and write
+- [Read and Write Locks](./src/com/jyotindersingh/ReenterantReadWriteLocks.java): Having specialized read and write
   locks can be much more efficient in read intensive workflows.
+
+## Inter-Thread Communication
+
+- Semaphores
+- Condition Variables: Powerful and general way of inter-thread communication.
+- [Matrix Multiplication with Back-Pressure](./src/com/jyotindersingh/MatrixMultiplication.java): We use interthread
+  communication techniques which make use of wait and notify - to implement a thread-safe queue for matrix
+  multiplication, where the consumer provides back-pressure to prevent getting overloaded from the producer.
   
